@@ -21,7 +21,7 @@ An replacement of jQuery's Future Elements Selector using without jQuery.
 
   Example:
   ```
-  bind(document, "click". "body", function (event) {
+  bind(document, "click", "body", function (event) {
       event.target.style.backgroundColor = "rgb(245, 245, 245)";
   });
   ```
