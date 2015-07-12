@@ -2,71 +2,31 @@
 An replacement of jQuery's Future Elements Selector using without jQuery.
 
 ###Usage
- 1. Basic Usage
+ 1. Include future.js in your Project:
+  ```html
+  <script src="./future.js"></script>
+  ```
+ 2. Pass Arguments to bind Function:
+  ```Javascript
+  bind(object, eventName, selector, callback);
+  ```
 
-   1. Include future.js in your Project:
-      ```html
-      <script src="./future.js"></script>
-      ```
-   2. Pass Arguments to bind Function:
-      ```Javascript
-      bind(object, eventName, selector, callback);
-      ```
+  \*object: an DOM element
 
-      \*object: an DOM element
+  \*eventName: standard or non-standard Javascript Event Name
 
-      \*eventName: standard or non-standard Javascript Event Name
+  \*selector: a CSS Style Selector
 
-      \*selector: a CSS Style Selector
+  \*callback: a function will bu executed after the event has been fired, it passes an argument referenced to the event.
 
-      \*callback: a function will bu executed after the event has been fired, it passes an argument referenced to the event.
-
-      Example:
-      ```
-      bind(document, "click". "body", function (event) {
-          event.target.style.backgroundColor = "rgb(245, 245, 245)";
-      });
-      ```
-
- 2. Advanced Usage -- Object-oriented Programming
-
-   1. Include future.js in your Project:
-      ```html
-      <script src="./future.js"></script>
-      ```
-
-   2. Create an instance of Future Object:
-      ```Javascript
-      var future = new Future(object);
-      ```
-      \*object: an DOM element
-
-   3. pass other arguments to "on" function:
-      ```Javascript
-      future.on(eventName, selector, callback);
-      ```
-
-      \*eventName: standard or non-standard Javascript Event Name
-
-      \*selector: a CSS Style Selector
-
-      \*callback: a function will bu executed after the event has been fired, it passes an argument referenced to the event.
-
-      Example:
-      ```Javascript
-      var future = new Future(document);
-      future.on("click", "body", function (event){
-          event.target.style.backgroundColor = "rgb(245, 245, 245)";
-      });
-      ```
+  Example:
+  ```
+  bind(document, "click". "body", function (event) {
+      event.target.style.backgroundColor = "rgb(245, 245, 245)";
+  });
+  ```
 
 For more Information, please check out `demo.htm`
-
-Used Keywords:
- - Future
- - bind
- - collectionHas
- - findParentBySelector
 
 ###License
 
