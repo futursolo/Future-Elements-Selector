@@ -17,10 +17,10 @@ An replacement of jQuery's Future Elements Selector using without jQuery.
 
   \*selector: a CSS Style Selector
 
-  \*callback: a function will bu executed after the event has been fired, it passes an argument referenced to the event.
+  \*callback: a function will be executed after the event has been fired, it passes an argument referenced to the event.
 
   Example:
-  ```
+  ```Javascript
   bind(document, "click", "body", function (event) {
       event.target.style.backgroundColor = "rgb(245, 245, 245)";
   });

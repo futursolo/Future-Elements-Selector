@@ -14,15 +14,29 @@ function __findParentBySelector(elm, selector) {
     return cur;
 }
 
+function __isParent (obj, parentObj) {
+    while (obj !== undefined && obj !== null && obj.tagName.toUpperCase() != "DOCUMENT") {
+        if (obj === parentObj) {
+            return true;
+        }
+        obj = obj.parentNode;
+    }
+    return false;
+}
+
 var __Future = function (parentObject) {
     this.parentObject = parentObject;
 };
 
 __Future.prototype.on = function (eventName, selector, callback) {
-    this.parentObject.addEventListener(eventName, function (event) {
+    parentObject = this.parentObject;
+    parentObject.addEventListener(eventName, function (event) {
         target = event.target || event.srcElement;
         selected = document.querySelectorAll(selector);
-        if (__collectionHas(selected, target) || __findParentBySelector(target, selector)) {
+        collectionHas = __collectionHas(selected, target);
+        parentHas = __findParentBySelector(target, selector);
+        isParent = __isParent(parentHas, parentObject);
+        if (collectionHas || (parentHas && isParent)) {
             callback(event);
         }
     });
