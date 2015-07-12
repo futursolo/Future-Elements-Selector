@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script src="./future.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="origin-button click-alert" id="0">Original Button</button>
+    </div>
+    <script>
+    var buttonid = 1;
+    window.addEventListener("load", function () {
+        container = document.querySelector(".container");
+        setInterval(function () {
+            element = document.createElement("button");
+            element.classList.add("new-button");
+            element.classList.add("click-alert");
+            element.innerHTML = "New Button";
+            element.setAttribute("id", buttonid);
+            container.appendChild(element);
+            buttonid += 1;
+        }, 1000);
+        bind(container, "click", ".container .click-alert", function (event) {
+            target = event.target;
+            alert("Greetings from Button " + target.getAttribute("id"));
+        });
+    });
+    </script>
+</body>
+</html>
